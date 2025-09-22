@@ -4,4 +4,5 @@
 # LICENSE file in the root directory of this source tree.
 
 import robbie.predictors.hf
+import robbie.predictors.vllm
 from robbie.predictors._base import GenerationConfig, Prediction, Predictor

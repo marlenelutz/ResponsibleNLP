@@ -15,10 +15,12 @@ from robbie.runner import Runner
 def main(args):
     random.seed(args.seed)
 
-    dataset = Dataset.build(args)
+    print(f"Arguments: {args}")
+
+    dataset = Dataset.build(args)  # check if dataset is saved somewhere
     predictor = Predictor.build(args)
     metric = Metric.build(args)
-
+    
     Runner(
         dataset,
         predictor,

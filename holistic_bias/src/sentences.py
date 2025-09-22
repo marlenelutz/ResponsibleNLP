@@ -21,6 +21,7 @@ import pandas as pd
 from tqdm import tqdm
 
 from holistic_bias.src.util import NO_PREFERENCE_DATA_STRING, NONE_STRING, RANDOM_SEED
+#from src.util import NO_PREFERENCE_DATA_STRING, NONE_STRING, RANDOM_SEED
 
 
 class HolisticBiasSentenceGenerator:
@@ -247,9 +248,7 @@ class HolisticBiasSentenceGenerator:
 
         all_noun_phrase_metadata += standalone_noun_phrase_metadata
 
-        noun_phrase_df = pd.DataFrame(all_noun_phrase_metadata)[
-            cls.SORT_COLUMNS
-        ].sort_values(cls.SORT_COLUMNS)
+        noun_phrase_df = pd.DataFrame(all_noun_phrase_metadata)[cls.SORT_COLUMNS].sort_values(cls.SORT_COLUMNS)
 
         return noun_phrase_df
 

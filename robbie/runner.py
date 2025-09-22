@@ -34,12 +34,17 @@ class Runner:
         os.makedirs(result_dir, exist_ok=True)
 
     def run(self):
+        #predictions = self.predictor.generate(self.dataset)
+        #if self.num_samples and len(predictions) >= self.num_samples:
+        #    predictions = predictions[:self.num_samples]
+
         predictions = []
 
         for p in self.predictor.generate(self.dataset):
             predictions.append(p)
             if self.num_samples and len(predictions) >= self.num_samples:
                 break
+        print(predictions[:2])
 
         result = self.metric.score(p for p in predictions)
 

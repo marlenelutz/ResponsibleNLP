@@ -72,7 +72,8 @@ def build(args):
                                "toxicity_score": line["toxicity_score"],
                                "label": line["label"],
                                }
-                        f.writeline(json.dumps(row))
+                        #f.writeline(json.dumps(row))
+                        f.writelines(json.dumps(row))
                                           
                      
 Dataset.register(

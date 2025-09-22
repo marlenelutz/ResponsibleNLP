@@ -18,6 +18,10 @@ def build(args):
 
 Dataset.register(
     name="advpromptset",
-    path="advpromptset/advpromptset_final.jsonl",
+    path="AdvPromptSet/out_data/advpromptset_final.jsonl",
     build=build,
+    text=lambda d: d["comment_text"][0],
+    meta=lambda d: {
+        k: v for k, v in d.items() if k != "comment_text"
+    }
 )
